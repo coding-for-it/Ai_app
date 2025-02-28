@@ -6,18 +6,16 @@ st.set_page_config(page_title="AI Document Processor", layout="wide")
 # Sidebar Navigation
 st.sidebar.title("🔍 Features")
 st.sidebar.write("Navigate to different sections:")
-
-# Define page navigation
 selected_function = st.sidebar.radio(
     "Select Functionality:",
     [
         "🏠 Home",
-        "📂 Upload PDF and Extract Text",
-        "📑 Summarize Text",
+        "📂 Extract Text",
         "🌎 Translate Text",
         "🖼️ Extract Images",
-        "🔠 Transcribe Text",
-        "🔍 Search & Analyze"
+        "📑 Summarize Text",
+        "🔠 Transliteration Text",
+        "❓ Question & Answer"
     ]
 )
 
@@ -29,17 +27,17 @@ if selected_function == "🏠 Home":
     except ImportError:
         st.error("⚠️ Home module not found!")
 
-elif selected_function == "📂 Upload PDF and Extract Text":
+elif selected_function == "📂 Extract Text":
     try:
-        from pdf_upload import pdf_upload_page
-        pdf_upload_page()  # Call function from pdf_upload.py
+        from document_upload import document_upload_page
+        document_upload_page()  # Call function from extract_text.py
     except ImportError:
-        st.error("⚠️ PDF Upload module not found!")
+        st.error("⚠️ Extract Text module not found!")
 
 elif selected_function == "📑 Summarize Text":
     try:
-        from pdf_summarize import pdf_summarize_page
-        pdf_summarize_page()  # Call function from pdf_summarize.py
+        from summarize_text import summarize_text_page
+        summarize_text_page()  # Call function from summarize_text.py
     except ImportError:
         st.error("⚠️ Summarization module not found!")
 
@@ -48,28 +46,28 @@ elif selected_function == "🌎 Translate Text":
         from translate_text import translate_text_page
         translate_text_page()  # Call function from translate_text.py
     except ImportError:
-        st.error("⚠️ Translate Text module not found!")
+        st.error("⚠️ Translation module not found!")
 
 elif selected_function == "🖼️ Extract Images":
     try:
         from extract_images import extract_images_page
         extract_images_page()  # Call function from extract_images.py
     except ImportError:
-        st.error("⚠️ Extract Images module not found!")
+        st.error("⚠️ Image extraction module not found!")
 
-elif selected_function == "🔠 Transcribe Text":
+elif selected_function == "🔠 Transliteration Text":
     try:
-        from transcribe_text import transcribe_text_page
-        transcribe_text_page()  # Call function from transcribe_text.py
+        from transliteration import transliterate_page
+        transliterate_page()  # Call function from transliteration.py
     except ImportError:
-        st.error("⚠️ Transcribe Text module not found!")
+        st.error("⚠️ Transliteration module not found!")
 
-elif selected_function == "🔍 Search & Analyze":
+elif selected_function == "❓ Question & Answer":
     try:
-        from search_analyze import search_analyze_page
-        search_analyze_page()  # Call function from search_analyze.py
+        from qna import qna_page
+        qna_page()
     except ImportError:
-        st.error("⚠️ Search & Analyze module not found!")
+        st.error("⚠️ Question & Answer module not found!")
 
 else:
     st.title(f"{selected_function} Functionality")
