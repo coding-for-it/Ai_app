@@ -4,32 +4,40 @@ SmartText AI is a backend-powered Python application using FastAPI and Streamlit
 
 #Features
 
--Text Transcription & Translation
+-**Text Transcription & Translation**
 
--Text Summarization
+-**Text Summarization**
 
--Image Extraction from PDFs
+-**Image Extraction from PDFs**
 
--File Translation & Summarization
+-**File Translation & Summarization**
 
--Question-Answering
+-**Question-Answering**
 
 #Technologies
 
--Backend: Python, FastAPI
+-**Backend**: Python, FastAPI
 
--Frontend: Streamlit
+-**Frontend**: Streamlit
 
 #Setup
 
 -Clone the repo:
 
+```bash
+
 git clone https://github.com/your-username/smarttext-ai.git
+
+```
 
 -Install dependencies:
 
+```commandline
 pip install -r requirements.txt
+```
 
 -Run the app:
 
+```commandline
 streamlit run app.py
+```
